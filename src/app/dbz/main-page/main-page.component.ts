@@ -13,6 +13,10 @@ interface Personaje {
 })
 export class MainPageComponent {
 
+  constructor(){
+    this.personajes = []
+  }
+
   personajes: Personaje[] = [
     {
       nombre: 'Goku',
@@ -28,7 +32,7 @@ export class MainPageComponent {
     nombre: '',
     poder: 0,
   }
-  agregar():void{
+  agregar(){
     if ( this.nuevo.nombre.trim().length === 0) {
       this.personajes.push( this.nuevo);
       this.nuevo = {
